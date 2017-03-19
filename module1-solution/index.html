@@ -1,0 +1,22 @@
+
+
+<!DOCTYPE html>
+<html ng-app="LunchCheck">
+   <head>
+      <meta charset="utf-8">
+      <script type="text/javascript" src="angular.min.js"></script>
+      <script type="text/javascript" src="app.js"></script>
+      <title>Duoc Do - Module 1 Coding Assignment</title>
+   </head>
+   <body>
+      <h1>Duoc Do - Angularjs</h1>
+      <div ng-controller="LunchCheckController">
+         Your name: <input type="text" name="" value="" ng-model="name">
+         <br>
+         Hello {{name}}, {{sayMessage()}} <br>
+         <br>
+         <button type="button" name="button" ng-click="feedDuocDo()">Feed DuocDo</button>
+         <br><img ng-src="images/duocdo-{{stateOfBeing}}.png" alt="">
+      </div>
+   </body>
+</html>
