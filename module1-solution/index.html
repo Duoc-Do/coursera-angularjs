@@ -26,6 +26,12 @@
   -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
   }
+  .input-box.red-status{
+    border-color: #ff2400;
+  }
+  .input-box.green-status{
+    border-color: #05b626;
+  }
   .txt-note {
   color: #999;
   font-style: italic;
@@ -45,14 +51,18 @@
   color: #05b626;
   font-weight: bold;
   }
+  #txtResult{
+    padding: 10px 0;
+    width: 100%
+  }
   </style>
   <body>
     <h1>Lunch Checker</h1>
     <div ng-controller="LunchCheckController">
-      <input type="text" name="" value="" ng-model="name" class="input-box" id="txtName">
+      <input type="text" name="" value="" ng-model="name" class="input-box {{borderStatus}}" id="txtName">
       <span class="txt-note"> ie.g., "cake, soda, fries, cigar, salad, water"</span>
-      <br><br>
-      <p class="txt-green" id="txtResult">{{result}}</p>
+     
+      <div class="{{customClass}}" id="txtResult">{{result}}</div>
       <button type="button" name="button" ng-click="btnCheck()">Check If Too Much</button>
     </div>
   </body>
