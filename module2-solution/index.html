@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html  ng-app="ShoppingListCheckOff">
+  <div class="container">
+    <head>
+      <meta charset="utf-8">
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="angular.min.js"></script>
+      <script type="text/javascript" src="app.js"></script>
+      <title>Duoc Do - Module 2 Coding Assignment</title>
+    </head>
+    <body>
+      <h1> Shopping List Check Off</h1>
+      <div class="row">
+        <div class="col-xs-6" ng-controller="ToBuyController as toBuyList">
+          <h4>To Buy</h4>
+          <ul class="unstylelist">
+            <li ng-repeat="item in toBuyList.items" class="item-list">
+              {{$index + 1}}. Buy {{item.quantity}} {{item.name}}
+            <button class="btn btn-xs btn-default" ng-click="toBuyList.addItem($index)"><i class="glyphicon glyphicon-plus"></i> Bought</button></li>
+          </ul>
+          <div class="emptyMessage label label-danger" ng-if="toBuyList.errorMessage">{{toBuyList.errorMessage}}</div>
+        </div>
+        <div class="col-xs-6" ng-controller="AlreadyBoughtController as alreadyBoughtList">
+          <h4>Already Bought</h4>
+          <ol>
+            <li ng-repeat="item in items">{{item.quantity}} of {{item.name}}</li>
+          </ol>
+          <div class="emptyMessage  label label-danger" ng-if="items<=0">{{errorMessage}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
