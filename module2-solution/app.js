@@ -3,31 +3,31 @@
 
 	function t(t) {
 		var e = this;
-		e.items = t.getItems(), e.addItem = function(n, i) {
+		e.items = t.getItems(), e.addItem = function(n, o) {
 			try {
-				t.addItem(n, i)
-			} catch (r) {
-				e.errorMessage = r.message
+				t.addItem(n, o)
+			} catch (i) {
+				e.errorMessage = i.message
 			}
 		}
 	}
 
 	function e(t, e) {
-		t.items = o, o.length <= 0 && (t.errorMessage = "Nothing bought yet")
+		t.items = r, r.length <= 0 && (t.errorMessage = "Nothing bought yet")
 	}
 
 	function n(t) {
 		var e = this,
-			n = r;
+			n = i;
 		e.addItem = function(t) {
-			if (1 == r.length) throw o.push(n[t]), n.splice(t, 1), new Error("Everything is bought!");
-			o.push(n[t]), n.splice(t, 1)
+			if (1 == i.length) throw r.push(n[t]), n.splice(t, 1), new Error("Everything is bought!");
+			r.push(n[t]), n.splice(t, 1)
 		}, e.getItems = function() {
 			return n
 		}
 	}
 
-	function i() {
+	function o() {
 		var t = this;
 		t.defaults = {
 			minItems: 4
@@ -36,7 +36,7 @@
 			return e
 		}
 	}
-	var r = [{
+	var i = [{
 			quantity: "10",
 			name: "Cookies"
 		}, {
@@ -46,9 +46,21 @@
 			quantity: "10",
 			name: "Milks"
 		}, {
-			quantity: "50",
+			quantity: "200",
+			name: "Banh Mi"
+		}, {
+			quantity: "10",
 			name: "Peanut Butter"
+		}, {
+			quantity: "20",
+			name: "Pepto Bisol (Cookie flavor)"
+		}, {
+			quantity: "40",
+			name: "Pepto Bismol"
+		}, {
+			quantity: "250",
+			name: "Pepto Bismol (Chocolate flavor)"
 		}],
-		o = [];
-	angular.module("ShoppingListCheckOff", []).controller("ToBuyController", t).controller("AlreadyBoughtController", e).provider("ShoppingListProvider", i), t.$inject = ["ShoppingListProvider"], e.$inject = ["$scope", "ShoppingListProvider"]
+		r = [];
+	angular.module("ShoppingListCheckOff", []).controller("ToBuyController", t).controller("AlreadyBoughtController", e).provider("ShoppingListProvider", o), t.$inject = ["ShoppingListProvider"], e.$inject = ["$scope", "ShoppingListProvider"]
 }();
